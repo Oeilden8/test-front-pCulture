@@ -1,0 +1,42 @@
+.form-news {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-news input {
+  width: 50vw;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin: 10px;
+}
+
+.form-news textarea {
+  width: 50vw;
+  max-width: 600px;
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  margin: 10px;
+}
+
+.button-submit {
+  background-color: rgb(168, 89, 241);
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: none;
+  margin: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.button-submit:hover {
+  background-color: rgb(70, 71, 77);
+  cursor: pointer;
+}
