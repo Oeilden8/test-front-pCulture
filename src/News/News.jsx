@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./News.css";
 import data from "../news.json";
+import logo from "../logo-pass-culture.svg";
 
 function News() {
   const [category, setCategory] = useState("all");
-
-  //   fonctionne mais pas dans mon html, à voir si temps ?
-  //   console.log(data.news[0].images[0]);
 
   const navigate = useNavigate();
 
@@ -54,12 +52,24 @@ function News() {
               <h3>{article.category}</h3>
               <time dateTime={article.date}>{handleDate(article.date)}</time>
               <p>{article.text}</p>
-              <div className="img-container">
-                {/* <img
-                  src={`../${article.images[0]}`}
-                  alt={`news ${article.title} de type ${article.category}  pass culture le ${article.date}`}
-                /> */}
-              </div>
+              {article.images ? (
+                <div className="img-container">
+                  {article.images.map((pic) => (
+                    // problème pour récupérer le chemin de l'image. fonctionne dans le alt mais pas avec src
+                    // j'ai mis une image lambda en attendant
+                    <img
+                      src={require(`../images/cannes1.jpg`)}
+                      //   src={require(`..${pic}`)}
+                      alt={`..${pic} news ${article.title} de type ${article.category} pass culture`}
+                      key={pic}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="img-container">
+                  <img src={logo} alt="logo pass culture" />
+                </div>
+              )}
             </article>
           ))}
         </section>
@@ -73,12 +83,22 @@ function News() {
                 <h3>{article.category}</h3>
                 <time dateTime={article.date}>{handleDate(article.date)}</time>
                 <p>{article.text}</p>
-                <div className="img-container">
-                  {/* <img
-                    src={`../${article.images[0]}`}
-                    alt={`news ${article.category} de type  ${article.title} pass culture le ${article.date}`}
-                  /> */}
-                </div>
+                {article.images ? (
+                  <div className="img-container">
+                    {article.images.map((pic) => (
+                      <img
+                        src={require(`../images/cannes1.jpg`)}
+                        //   src={require(`..${pic}`)}
+                        alt={`news ${article.title} de type ${article.category} pass culture`}
+                        key={pic}
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="img-container">
+                    <img src={logo} alt="logo pass culture" />
+                  </div>
+                )}
               </article>
             ))}
         </section>
