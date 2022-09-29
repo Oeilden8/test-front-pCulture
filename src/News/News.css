@@ -1,0 +1,49 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-category {
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.news-container {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.news-card {
+  min-width: 400px;
+  width: 20vw;
+  border-radius: 10px;
+  background-color: rgb(70, 71, 77);
+  margin: 10px;
+  padding: 10px;
+}
+
+h2 {
+  color: rgb(168, 89, 241);
+}
+
+.button-nav {
+  background-color: rgb(168, 89, 241);
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  border-style: none;
+  margin: 20px;
+  color: white;
+}
+
+.button-nav:hover {
+  background-color: rgb(70, 71, 77);
+  cursor: pointer;
+}
